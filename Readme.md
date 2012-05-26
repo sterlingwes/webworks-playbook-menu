@@ -2,6 +2,8 @@
 
 A native-like HTML5 BlackBerry PlayBook swipe-down application menu for WebWorks apps.
 
+Try the [working demo, here](http://wesquire.ca/i/pbmenu/sample/).
+
 Built for & tested with the [jqMobi](http://jqmobi.com) framework, but should also play well with jQuery with little-to-no modification.
 
 ---
@@ -89,6 +91,28 @@ Call `buttons()` every time you need to add/remove/update your menu buttons. To 
 	$.fn.pbmenu().setActive(4,true);
 	
 The second argument is a boolean indicating whether the button is active.
+
+## API
+
+*$.fn.pbmenu().init([configObj])*
+
+Initializes the menu, adds it to the DOM. Optionally sets config options with object literal.
+
+*$.fn.pbmenu().set(configObj)*
+
+Set config options with object literal.
+
+*$.fn.pbmenu().listen()*
+
+Bind the WebWorks bezel swipe-down listener, should it become unset. Set by default on `init()`.
+
+*$.fn.pbmenu().buttons(arrayOfButtonObjects)*
+
+Setup menu buttons. Expects an array of button objects. Each object must have `caption` and `icon` properties, at a minimum.
+
+*$.fn.pbmenu().setActive(btnIndexOrCaptionString,booleanActive)*
+
+Set active state for a menu button.
 
 ## License
 
