@@ -1,0 +1,51 @@
+#jQUi-pbmenu #pbmenu-left {
+	position: absolute;
+	left: 0px;
+	text-align: left;
+	height: 100%;
+}
+#jQUi-pbmenu #pbmenu-right {
+	position: absolute;
+	right: 0px;
+	text-align: right;
+	height: 100%;
+}
+#jQUi-pbmenu .pbmenu-btn {
+	display: inline-block;
+	position: relative;
+	top: 0px; bottom: 0px;
+	width: 100px;
+	height: 100%;
+	padding: 95px 10px 0px 10px;
+	text-align: center;
+	color: #eee;
+	font-weight: bold;
+	text-shadow: #000 2px 2px 5px;
+}
+#jQUi-pbmenu .pbmenu-btn-active {
+	background: rgba(0,0,0,0.3);
+	display: inline-block;
+	position: relative;
+	top: 0px; bottom: 0px;
+	width: 100px;
+	height: 100%;
+	padding: 95px 10px 0px 10px;
+	text-align: center;
+	color: #eee;
+	font-weight: bold;
+	text-shadow: #000 2px 2px 5px;
+}
+#jQUi-pbmenu .pbmenu-btn::before, #jQUi-pbmenu .pbmenu-btn-active::before {
+	position: absolute;
+	top: 0px;
+	left: 5px;
+	font-size: 80px !important;
+	height: 80px !important;
+	width: 80px !important;
+	line-height: 80px !important;
+}
+#jQUi-pbmenu .pbmenu-btn:active {
+	background: rgba(255,255,255,0.85);
+	color: #606c88;
+	text-shadow: #aaa 2px 2px 5px;
+}

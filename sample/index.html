@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+<title>pbmenu sample</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" type="text/css" href="styles/icons.css" /> 
+<link rel="stylesheet" type="text/css" href="styles/jq.pbmenu.buttons.css" /> 
+
+<link rel="stylesheet"  type="text" href="./themes/jq.ui.sleak.css" />
+
+<script type="text/javascript" charset="utf-8" src="./js/jq.ui.min.js"></script> 
+<script type="text/javascript" src="../jq.pb.menu.js"></script>
+
+<script type="text/javascript">
+
+	// code for initializing our playbook menu
+
+	$.ui.ready(function() {
+		
+		$.fn.pbmenu().init({ 
+			toggleBtn:	'pbMenuToggle',
+			buttons:	[
+				{
+					caption: 	'Home',
+					icon:		'home',
+					active:		true
+				},
+				{
+					caption: 	'Edit',
+					icon:		'pencil',
+					align:		'left',
+					onClick:	'alert("Edited!!")'
+				},
+				{
+					caption: 	'My Profile',
+					icon:		'user'
+				},
+				{
+					caption: 	'Delete',
+					icon:		'trash',
+					align:		'left',
+					onClick:	'alert("Deleted!!")'
+				},
+				{
+					caption: 	'Send',
+					icon:		'mail'
+				},
+			]
+		});
+		
+	});
+
+</script>
+
+<script type="text/javascript">
+
+	$.ui.autoLaunch=false;
+    var init = function(){
+	   $.ui.backButtonText="Back";  
+	   window.setTimeout(function(){$.ui.launch();},1500);
+       //$.ui.removeFooterMenu(); This would remove the bottom nav menu
+    };
+    document.addEventListener("DOMContentLoaded",init,false);  
+   
+    /* This code prevents users from dragging the page */
+    var preventDefaultScroll = function(event) {
+        event.preventDefault();
+        window.scroll(0,0);
+        return false;
+    };
+	
+	document.addEventListener('touchmove', preventDefaultScroll, false);
+	
+</script>
+
+</head>
+<body>
+    <div id="jQUi">
+        <!-- this is the header div -->
+        <div id="header">
+        <a href="#" id="pbMenuToggle" class="button" style="float:right;margin-right:15px;">Toggle PBmenu</a>
+        </div>
+
+        
+        <div id="content">
+            <!-- here is where you can add your panels -->
+            <div title='Welcome' id="main" class="panel" selected="true" >
+            <p>This is a basic skeleton jqUi sample showcasing pbmenu functionality.</p>
+			<p>No links or buttons are supposed to work except for 'Toggle Nav' which will show / hide the PlayBook menu.</p>
+			<p>You'll need to compile this as a BlackBerry PlayBook Webworks app if you want to test the bezel swipe-down for the menu. The bezel-swipe will not work in a PlayBook browser!</p>
+			<p>By default, the menu will disappear when a menu button is clicked. It will also disappear if the user clicks/touches outside of the menu itself.</p>
+			<p>For more detail on available methods and configuration properties, <a href="http://github.com/sterlingwes/webworks-playbook-menu">click here</a>.</p>
+            </div> 
+
+        </div>
+
+        <!-- bottom navbar.  Add additional tabs here -->
+        <div id="navbar">
+            <a href="#main" id='navbar_home' class='icon home' >home</a>
+        </div>
+        
+        <!-- this is the default left side nav menu -->
+        <nav>
+			<ul>
+				<li class="icon home mini"><a href="#main">These</a></li>
+				<li class="icon paper mini"><a href="#main">Are Menu</a></li>
+				<li class="icon trash mini"><a href="#main">Options</a></li>
+				<li class="icon download mini"><a href="#main">They are</a></li>
+				<li class="icon settings mini"><a href="#main">AWESOME</a></li>
+			</ul>
+        </nav>
+    </div>
+</body>
+</html>
